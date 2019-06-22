@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
+import UserHeader from './UserHeader';
 
 class PostList extends React.Component {
 
@@ -9,7 +10,7 @@ class PostList extends React.Component {
     }
 
     renderList() {
-        return this.props.posts.map(({ id, title, body }) => {
+        return this.props.posts.map(({ id, title, body, userId }) => {
             return (
                 <div className="item" key={id}>
                     <i className="large middle aligned icon user" />
@@ -18,6 +19,7 @@ class PostList extends React.Component {
                             <h2>{title}</h2>
                             <p>{body}</p>
                         </div>
+                        <UserHeader userId={userId} />
                     </div>
                 </div>
             );
