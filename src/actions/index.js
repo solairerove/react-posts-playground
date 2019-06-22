@@ -1,5 +1,15 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
+    await dispatch(fetchPosts());
+
+    const userIds = getState().posts
+        .map((post) => post.userId)
+        .filter((userId, index, array) => array.indexOf(userId) === index);
+
+    userIds.forEach((userId) => dispatch(fetchUser(userId)));
+}
+
 export const fetchPosts = () => async dispatch => {
     const response = await jsonPlaceholder.get('/posts');
 
