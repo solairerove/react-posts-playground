@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "mgmcdermott.vscode-language-babel",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "codezombiech.gitignore",
+    "esbenp.prettier-vscode",
+    "msjsdiag.vscode-react-native"
+  ]
+}
